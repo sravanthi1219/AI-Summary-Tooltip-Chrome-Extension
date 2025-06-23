@@ -1,0 +1,25 @@
+
+{
+  "manifest_version": 3,
+  "name": "AI Website Auto Summary - Fixed",
+  "version": "1.3",
+  "description": "Auto summarizes the current webpage using OpenAI when extension icon is clicked.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["tooltip.css"]
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}
